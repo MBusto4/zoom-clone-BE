@@ -49,7 +49,7 @@ io.on("connection", (socket) => {
 
         socket.on("sendMessage", ({ message }) => {
             console.log('message sent-->', message)
-            io.to(user.room).emit("message", {
+            io.to(user.roomId).emit("message", {
                 user: user.userName,
                 text: message,
             });
